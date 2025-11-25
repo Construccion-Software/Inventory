@@ -1,0 +1,25 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_inventory
+    environment:
+      MYSQL_ROOT_PASSWORD: ZoGBlySApsrNopNPRYxxqzlkcyWFVogE
+      MYSQL_DATABASE: inventorydb
+    ports:
+      - "19695:19695"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  inventoryapi:
+    build: .
+    container_name: inventory_service
+    depends_on:
+      - mysql
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "server=nozomi.proxy.rlwy.net;port=19695;database=inventorydb;user=root;password=ZoGBlySApsrNopNPRYxxqzlkcyWFVogE;"
+    ports:
+      - "19695:19695"
+
+volumes:
+  dbdata:
