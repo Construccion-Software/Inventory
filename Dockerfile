@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-# Nota: Railway asigna din·micamente PORT; no es necesario exponer 8080 en producciÛn,
+# Nota: Railway asigna din√°micamente PORT; no es necesario exponer 8080 en producci√≥n,
 # pero lo dejamos para pruebas locales.
 EXPOSE 8080
 
