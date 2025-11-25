@@ -16,7 +16,9 @@ public class AuthService : IAuthService
     private readonly Dictionary<string, string> _users = new()
     {
         {"admin","Password123!"},
-        {"user","Password123!"}
+        {"user","Password123!"},
+        {"doctor","Password123!"}
+
     };
 
     public AuthService(JwtSettings jwt) => _jwt = jwt;
