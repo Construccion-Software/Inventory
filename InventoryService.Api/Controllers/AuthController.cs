@@ -4,7 +4,7 @@ using InventoryService.Api.Auth;
 namespace InventoryService.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/[controller]")] 
 public class AuthController : ControllerBase
 {
     private readonly IAuthService _auth;
