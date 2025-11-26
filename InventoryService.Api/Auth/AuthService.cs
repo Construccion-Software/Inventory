@@ -32,7 +32,7 @@ public class AuthService : IAuthService
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Name, username),
-            new Claim(ClaimTypes.Role, username=="admin"?"Admin":"User")
+            new Claim(ClaimTypes.Role, username=="admin"?"Admin":"User","doctor")
         };
 
         var token = tokenHandler.CreateToken(new SecurityTokenDescriptor
